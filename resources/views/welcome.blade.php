@@ -196,7 +196,7 @@
                                 GILA BELAJAR
                             </p>
                             <h1 class="price text-center">
-                                $280K
+                                $70
                             </h1>
                             <div class="item-benefit-pricing mb-4">
                                 <img src="{{ asset('images/ic_check.svg') }}" alt="">
@@ -262,7 +262,7 @@
                                 <div class="clear"></div>
                             </div>
                             <p>
-                                <a href="{{ route('checkout') }}" class="btn btn-master btn-primary w-100 mt-3">
+                                <a href="{{ route('checkout.create', 'gila-belajar') }}" class="btn btn-master btn-primary w-100 mt-3">
                                     Take This Plan
                                 </a>
                             </p>
@@ -274,7 +274,7 @@
                                 BARU MULAI
                             </p>
                             <h1 class="price text-center">
-                                $140K
+                                $25
                             </h1>
                             <div class="item-benefit-pricing mb-4">
                                 <img src="{{ asset('images/ic_check.svg') }}" alt="">
@@ -308,7 +308,7 @@
                                 <div class="clear"></div>
                             </div>
                             <p>
-                                <a href="{{ route('checkout') }}" class="btn btn-master btn-secondary w-100 mt-3">
+                                <a href="{{ route('checkout.create', 'baru-mulai') }}" class="btn btn-master btn-secondary w-100 mt-3">
                                     Start With This Plan
                                 </a>
                             </p>
