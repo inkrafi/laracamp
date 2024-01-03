@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('images/logo.png') }}" alt="">
+            {{-- <img src="{{ asset('images/logo.png') }}" alt=""> --}}
+            <p class="pt-2">inkCamp</p>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Program</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Program</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Mentor</a>
@@ -25,7 +26,11 @@
                 <div class="d-flex user-logged nav-item dropdown no-arrow">
                     <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Halo, {{ Auth::user()->name }}!
-                        <img src="{{ Auth::user()->avatar }}" class="user-photo" alt="">
+                        @if (Auth::user()->avatar)
+                            <img src="{{ Auth::user()->avatar }}" class="user-photo" alt="avatar">
+                        @else
+                            <img src="https://ui-avatars.com/api/?name=Admin" class="user-photo" alt="avatar">
+                        @endif
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
                             <li>
                                 <a href="{{ route('dashboard') }}" class="dropdown-item">My Dashboard</a>
