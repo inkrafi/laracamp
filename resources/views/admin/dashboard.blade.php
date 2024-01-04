@@ -17,7 +17,7 @@
                                 <th>Camp</th>
                                 <th>Price</th>
                                 <th>Register Data</th>
-                                <th>Paid Status</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -26,7 +26,7 @@
                                         <td>{{ $checkout->id }}</td>
                                         <td>{{ $checkout->user->name }}</td>
                                         <td>{{ $checkout->camp->title }}</td>
-                                        <td>{{ $checkout->camp->price }}</td>
+                                        <td>${{ $checkout->camp->price }}</td>
                                         <td>{{ $checkout->camp->created_at }}</td>
                                         <td>
                                             @if ($checkout->is_paid)
@@ -39,7 +39,7 @@
                                             @if (!$checkout->is_paid)
                                                 <form action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
                                                     @csrf 
-                                                    <button class="btn btn-primary btn-sm">Set to paid</button>
+                                                    <button class="badge btn-primary">Set to paid</button>
                                                 </form>
                                             @endif
                                         </td>
